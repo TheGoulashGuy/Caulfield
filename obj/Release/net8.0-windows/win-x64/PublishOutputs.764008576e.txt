@@ -1,0 +1,7 @@
+C:\Users\holde\Desktop\Caulfield\DraftMaster.pdb
+C:\Users\holde\Desktop\Caulfield\D3DCompiler_47_cor3.dll
+C:\Users\holde\Desktop\Caulfield\PenImc_cor3.dll
+C:\Users\holde\Desktop\Caulfield\PresentationNative_cor3.dll
+C:\Users\holde\Desktop\Caulfield\vcruntime140_cor3.dll
+C:\Users\holde\Desktop\Caulfield\wpfgfx_cor3.dll
+C:\Users\holde\Desktop\Caulfield\DraftMaster.exe

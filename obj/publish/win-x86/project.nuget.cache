@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "T5ygMA5Jirl4/0j8wLYnDEg1pMbue0k4qMp3IILSeN4LxxI1UJZtnwqw7nN3pUhKzkRFcFyJ7rFSVgi53IIhog==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\holde\\Documents\\DraftMaster Writing App\\DraftMaster\\DraftMaster.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0\\microsoft.net.illink.tasks.8.0.0.nupkg.sha512",
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.0\\microsoft.netcore.app.runtime.win-x86.8.0.0.nupkg.sha512",
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.0\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.0.nupkg.sha512",
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.0\\microsoft.aspnetcore.app.runtime.win-x86.8.0.0.nupkg.sha512",
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.0\\microsoft.netcore.app.crossgen2.win-x64.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

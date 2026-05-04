@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "P0vivqp/akdOgGTOU9qyp3c4TFLjc2lRCgqASYbEav0M5YFZa1w9063IqqJZRUv5VeYXbK0MYejn1RogyiCvcQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\holde\\Documents\\DraftMaster Writing App\\DraftMaster\\DraftMaster.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.0\\microsoft.netcore.app.runtime.win-x64.8.0.0.nupkg.sha512",
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.0\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.0.nupkg.sha512",
+    "C:\\Users\\holde\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.0\\microsoft.aspnetcore.app.runtime.win-x64.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

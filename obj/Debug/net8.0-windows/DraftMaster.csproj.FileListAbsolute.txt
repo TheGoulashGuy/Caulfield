@@ -1,0 +1,16 @@
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.csproj.GenerateResource.cache
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.AssemblyInfoInputs.cache
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.AssemblyInfo.cs
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.csproj.CoreCompileInputs.cache
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.Form1.resources
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\bin\Debug\net8.0-windows\DraftMaster.exe
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\bin\Debug\net8.0-windows\DraftMaster.deps.json
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\bin\Debug\net8.0-windows\DraftMaster.runtimeconfig.json
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\bin\Debug\net8.0-windows\DraftMaster.dll
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\bin\Debug\net8.0-windows\DraftMaster.pdb
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.dll
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\refint\DraftMaster.dll
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.pdb
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.genruntimeconfig.cache
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\ref\DraftMaster.dll
