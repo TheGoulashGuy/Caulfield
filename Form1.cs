@@ -23,21 +23,56 @@ namespace DraftMaster
         {
             InitializeComponent();
             InitializeStatusMenu();
-            plottingDataGridView.MouseWheel += plottingDataGridView_MouseWheel;
-            // 1. Enable Text Wrapping
-            plottingDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-            // 2. Let the Cell Grow as Needed (Wrap)
-            // Change from 'None' to 'AllCells'. This forces the row height to expand 
-            // to fit the wrapped text automatically.
+            // 1. ADD THIS LINE to build the context menu
+            InitializeGridMenu();
+
+            plottingDataGridView.MouseWheel += plottingDataGridView_MouseWheel;
+
+            // 2. ADD THIS LINE for the right-click selection fix (explained below!)
+            plottingDataGridView.CellMouseDown += plottingDataGridView_CellMouseDown;
+
+            plottingDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             plottingDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             plottingDataGridView.AllowUserToResizeRows = true;
-
-            // 3. Fill the Container
-            // Change from 'None' to 'Fill'. This forces the columns to stretch evenly 
-            // to take up all available horizontal space in the DataGridView.
             plottingDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             plottingDataGridView.AllowUserToResizeColumns = true;
+        }
+
+        private void plottingDataGridView_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            // Instantly lock every new column so it cannot be sorted
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void DisableAllSorting()
+        {
+            foreach (DataGridViewColumn column in plottingDataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        private void deleteRowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Make sure the user actually has a cell selected
+            if (plottingDataGridView.CurrentCell != null)
+            {
+                int currentIndex = plottingDataGridView.CurrentCell.RowIndex;
+
+                // Prevent deleting the magical blank "*" row at the bottom
+                if (plottingDataGridView.Rows[currentIndex].IsNewRow)
+                {
+                    MessageBox.Show("You cannot delete the blank placeholder row.", "Action Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Delete the selected row
+                plottingDataGridView.Rows.RemoveAt(currentIndex);
+
+                // Flag that the user made a change so they are prompted to save
+                outliningDataChanged = true;
+            }
         }
 
         private void newProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +107,42 @@ namespace DraftMaster
                         MessageBox.Show("Error creating project: " + ex.Message);
                     }
                 }
+            }
+        }
+        private void InitializeGridMenu()
+        {
+            ContextMenuStrip gridMenu = new ContextMenuStrip();
+
+            // Create the menu buttons
+            ToolStripMenuItem addColumnItem = new ToolStripMenuItem("Add New Column");
+            ToolStripMenuItem deleteColumnItem = new ToolStripMenuItem("Delete Last Column");
+            ToolStripMenuItem insertRowItem = new ToolStripMenuItem("Insert Row Here");
+            ToolStripMenuItem deleteRowItem = new ToolStripMenuItem("Delete Row"); // NEW!
+
+            // Link them to your existing methods
+            addColumnItem.Click += addColumnToolStripMenuItem_Click;
+            deleteColumnItem.Click += deleteColumnToolStripMenuItem_Click;
+            insertRowItem.Click += insertRowToolStripMenuItem_Click;
+            deleteRowItem.Click += deleteRowToolStripMenuItem_Click; // NEW!
+
+            // Add them to the menu
+            gridMenu.Items.Add(insertRowItem);
+            gridMenu.Items.Add(deleteRowItem); // NEW!
+            gridMenu.Items.Add(new ToolStripSeparator());
+            gridMenu.Items.Add(addColumnItem);
+            gridMenu.Items.Add(deleteColumnItem);
+
+            // Attach the menu to the DataGridView
+            plottingDataGridView.ContextMenuStrip = gridMenu;
+        }
+
+        private void plottingDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // If the user right-clicks a valid cell (not the headers)
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Force the grid to focus on the exact cell they right-clicked
+                plottingDataGridView.CurrentCell = plottingDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
             }
         }
 
@@ -226,6 +297,8 @@ namespace DraftMaster
                     fileNode.Tag = file;
                     parentNode.Nodes.Add(fileNode);
                 }
+
+                DisableAllSorting();
             }
             catch (Exception ex)
             {
@@ -460,10 +533,7 @@ namespace DraftMaster
             currentOutliningFile = "";
             outliningDataChanged = true;
 
-            MessageBox.Show("New grid created with 5 columns!\n\n" +
-                            "• Double-click column headers to rename\n" +
-                            "• Right-click column headers to add/delete columns\n" +
-                            "• Start typing to add data");
+            DisableAllSorting();
         }
 
         private void addColumnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -471,6 +541,29 @@ namespace DraftMaster
             int newColNum = plottingDataGridView.Columns.Count + 1;
             plottingDataGridView.Columns.Add($"Column{newColNum}", $"Column {newColNum}");
             outliningDataChanged = true;
+        }
+
+        private void insertRowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Make sure the user actually has a cell selected
+            if (plottingDataGridView.CurrentCell != null)
+            {
+                // Get the index of the currently selected row
+                int currentIndex = plottingDataGridView.CurrentCell.RowIndex;
+
+                // If they try to insert above the magical blank "*" row at the bottom, 
+                // just let the grid handle it naturally to avoid crashes.
+                if (plottingDataGridView.Rows[currentIndex].IsNewRow)
+                {
+                    return;
+                }
+
+                // Insert a new blank row at that exact position
+                plottingDataGridView.Rows.Insert(currentIndex);
+
+                // Flag that the user made a change so they are prompted to save
+                outliningDataChanged = true;
+            }
         }
 
         private void deleteColumnToolStripMenuItem_Click(object sender, EventArgs e)

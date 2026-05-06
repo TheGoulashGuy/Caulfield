@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DraftMaster")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bdc02aa6e60e213252af96c6154fa3608169c2a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4d824239e4671a09b2a2b00c6ea4e5c8aa805fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("DraftMaster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DraftMaster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
