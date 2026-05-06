@@ -14,3 +14,4 @@ C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-wi
 C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.pdb
 C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.genruntimeconfig.cache
 C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\ref\DraftMaster.dll
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Debug\net8.0-windows\DraftMaster.sourcelink.json

@@ -474,3 +474,4 @@ C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Release\net8.0-
 C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Release\net8.0-windows\win-x64\DraftMaster.pdb
 C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Release\net8.0-windows\win-x64\DraftMaster.genruntimeconfig.cache
 C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Release\net8.0-windows\win-x64\ref\DraftMaster.dll
+C:\Users\holde\Documents\DraftMaster Writing App\DraftMaster\obj\Release\net8.0-windows\win-x64\DraftMaster.sourcelink.json

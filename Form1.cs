@@ -27,13 +27,16 @@ namespace DraftMaster
             // 1. Enable Text Wrapping
             plottingDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-            // 2. Allow Manual Row Resizing
-            // "None" means the app won't force the height, so the user can drag the edges.
-            plottingDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            // 2. Let the Cell Grow as Needed (Wrap)
+            // Change from 'None' to 'AllCells'. This forces the row height to expand 
+            // to fit the wrapped text automatically.
+            plottingDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             plottingDataGridView.AllowUserToResizeRows = true;
 
-            // 3. Allow Manual Column Resizing
-            plottingDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            // 3. Fill the Container
+            // Change from 'None' to 'Fill'. This forces the columns to stretch evenly 
+            // to take up all available horizontal space in the DataGridView.
+            plottingDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             plottingDataGridView.AllowUserToResizeColumns = true;
         }
 
